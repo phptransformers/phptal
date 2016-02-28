@@ -1,0 +1,44 @@
+{
+    "name": "phptransformers/phptal",
+    "description": "PHPTAL implementation of PhpTransformer.",
+    "keywords": [
+        "PhpTransformers", "PhpTransformer", "PHPTAL", "zope", "Template Engine", "Templates"
+    ],
+    "homepage": "https://github.com/phptransformers/phptal",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "MacFJA",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php" : ">=5.3.0",
+        "phptransformers/phptransformer": "~1.0.0",
+        "phptal/phptal": "^1.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "~4.6",
+        "squizlabs/php_codesniffer": "~2.3",
+        "phpmd/phpmd": "^2.3",
+        "sebastian/phpcpd": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "PhpTransformers\\PHPTAL\\": "lib"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PhpTransformers\\PHPTAL\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": [
+            "phpcs",
+            "phpmd lib/ text cleancode,codesize,controversial,design,naming,unusedcode",
+            "phpcpd lib/",
+            "phpunit --colors=always --coverage-text --coverage-clover=coverage.clover"
+        ]
+    }
+}
